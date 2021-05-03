@@ -1,0 +1,19 @@
+# Search index configuration consumed by `newsroom build-index --config configs/search.yaml`
+embedding:
+  provider: tfidf_svd        # tfidf_svd (offline) | sentence_transformers (optional extra)
+  dimension: 256
+  model_name: all-MiniLM-L6-v2
+
+bm25:
+  k1: 1.5
+  b: 0.75
+
+hybrid:
+  rrf_k: 60                  # reciprocal-rank-fusion constant
+  bm25_weight: 1.0
+  vector_weight: 1.0
+  candidate_multiplier: 4    # each retriever returns top_k * multiplier candidates before fusion
+
+index:
+  metric: cosine
+  normalize: true

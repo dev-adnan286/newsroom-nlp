@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    image: newsroom-nlp:latest
+    container_name: newsroom-api
+    ports:
+      - "8000:8000"
+    environment:
+      NEWSROOM_LOG_LEVEL: INFO
+      NEWSROOM_API_KEY: ""
+      NEWSROOM_ARTIFACTS_DIR: /app/artifacts
+    volumes:
+      - newsroom-artifacts:/app/artifacts
+    restart: unless-stopped
+
+volumes:
+  newsroom-artifacts:

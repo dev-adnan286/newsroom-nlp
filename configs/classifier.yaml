@@ -1,0 +1,24 @@
+# Classifier training configuration consumed by `newsroom train --config configs/classifier.yaml`
+model: linear_svc            # one of: linear_svc, logistic_regression, complement_nb, sgd
+calibrate: true              # wrap in CalibratedClassifierCV to expose predict_proba
+grid_search: true            # run a small GridSearchCV over the vectorizer/classifier grid
+cv_folds: 3
+test_size: 0.2
+random_seed: 42
+
+vectorizer:
+  word_ngram_range: [1, 2]
+  char_ngram_range: [3, 5]
+  min_df: 2
+  max_df: 0.95
+  max_features: 60000
+  sublinear_tf: true
+  use_char_ngrams: true
+
+preprocessing:
+  lowercase: true
+  expand_contractions: true
+  remove_stopwords: true
+  stem: true
+  replace_urls: true
+  replace_numbers: true

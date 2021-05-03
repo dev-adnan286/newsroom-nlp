@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.venv/
+venv/
+env/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Project artifacts
+artifacts/
+models/
+*.joblib
+*.npy
+*.npz
+.cache/
+reports/
+data/raw/
+data/processed/
+!data/sample/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.local
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
